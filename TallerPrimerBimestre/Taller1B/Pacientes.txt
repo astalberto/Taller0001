@@ -1,0 +1,9 @@
+
+Paciente 1
+Cedula: 172400000000
+Nombres Completos: Alberto Herrera Herrera Salinas
+Fecha de nacimento: 25 de Octubre 2005
+Estatura :1,70
+Peso: 70,00
+Alergias: Polvo
+--------------------------------
