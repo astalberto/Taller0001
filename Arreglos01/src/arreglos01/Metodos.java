@@ -30,7 +30,9 @@ public class Metodos {
         System.out.println("Secuencial          [4]");
         System.out.println("Eliminar            [5]");
         System.out.println("insertar inicio     [6]");
-        System.out.println("insertar Ordenado   [7]");        
+        System.out.println("insertar Ordenado   [7]");
+        System.out.println("inserccion          [8]");
+        System.out.println("seleccion           [9]");
         System.out.println("Salir               [0]");
         System.out.println("-----------------------");
 
@@ -111,11 +113,67 @@ public class Metodos {
                 pos++;
             }
             desplazaDer(pos);
-            myArray[pos]=num;
+            myArray[pos] = num;
             ev++;
-        }else{
+        } else {
             System.out.println("Arreglo Lleno");
         }
+    }
 
+    public void insercion() {
+        int aux, pos;
+        for (int i = 1; i < ev; i++) {
+            aux = myArray[i];
+            pos = i - 1;
+            while ((pos >= 0) && (aux < myArray[pos])) {
+                myArray[pos + 1] = myArray[pos];
+                pos--;
+            }
+            myArray[pos + 1] = aux;
+        }
+    }
+
+    public void seleccion() {
+        int aux, pos;
+        for (int i = ev; i > 0; i--) {
+            pos = 0;
+            aux = myArray[pos];
+            for (int j = 1; j < i; j++) {
+                if (myArray[i] > aux) {
+                    aux = myArray[j];
+                    pos = j;
+                }
+                myArray[pos] = myArray[i - 1];
+                myArray[i - 1] = aux;
+            }
+        }
+    }
+
+    public void qSort(int ini, int fin) {
+        int a = ini, b = fin, aux;
+        int pivote = myArray[(ini + fin) / 2];
+        do {
+            while (myArray[a] < pivote) 
+                a++;
+            
+            while (myArray[b] > pivote) 
+                b--;
+            
+            if (a < b) {
+                aux = myArray[a];
+                myArray[a] = myArray[b];
+                
+                myArray[b] = aux;
+            }
+            a++;
+            b--;
+        } while (a <= b);
+        if (ini < b) {
+            qSort(ini, b);
+            if (fin > a) {
+                qSort(a, fin);
+            }
+        }
+        
     }
 }
