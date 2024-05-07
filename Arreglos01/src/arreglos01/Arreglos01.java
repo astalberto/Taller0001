@@ -50,6 +50,9 @@ public class Arreglos01 {
                     num = obj.entrada.nextInt();
                     obj.ordenado(num);
                 }
+                case 8 ->{
+                    obj.insercion();
+                }
                 default -> {
                 }
             }
