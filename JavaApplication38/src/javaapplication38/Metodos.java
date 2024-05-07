@@ -56,7 +56,7 @@ public class Metodos {
         try {
             escribir = new FileWriter(archivo, true);
             linea = new PrintWriter(escribir);
-            linea.printf("%s\n%s\n%s\n%s", nombre, Double.toString(calculoP), Double.toString(programacionP),Double.toString( logicaP));
+            linea.printf("%s\n%s\n%s\n%s\n", nombre, Double.toString(calculoP), Double.toString(programacionP),Double.toString( logicaP));
             linea.close();
             
         } catch (Exception e) {
@@ -87,7 +87,9 @@ public class Metodos {
         try {
             leer = new FileReader(archivo);
             almacenamiento = new BufferedReader(leer);
+            int i=0;
             while (cadena != null) {
+                
                 cadena = almacenamiento.readLine();
                 nombre = cadena;
                 cadena = almacenamiento.readLine();
@@ -98,12 +100,12 @@ public class Metodos {
                 logicaP = cadena;
 
                 if (cadena != null) {
-                    for (int i = 0; i < arreglo.length; i++) {
-                        arreglo[i] = String.format("%s", nombre);
+                    
+                        arreglo[i] = nombre;
                         arregloC[i] = Double.parseDouble(calculoP);
                         arregloP[i] = Double.parseDouble(programacionP);
                         arregloL[i] = Double.parseDouble(logicaP);
-                    }
+                    i++;
                 }
             }
             almacenamiento.close();
@@ -114,18 +116,16 @@ public class Metodos {
         String aprobadoCalculo = "Los estudiantes que aprobaron calculo son:";
         String aprobadoProgramacion = "Los estudiantes que aprobaron Programacion son:";
         String aprobadoLogica = "Los estudiantes que aprobaron Logica son:";
-        for (int i = 0; i < arregloP.length; i++) {
-            System.out.println(arregloP[i]);
-        }
+        
         for (int i = 0; i < arreglo.length; i++) {
 
-            if (arregloC[i] >= 7) {
+            if (arregloC[i] >= 7.0) {
                 aprobadoCalculo = String.format("%s\nEl estudainte %s con promedio de %.2f", aprobadoCalculo, arreglo[i], arregloC[i]);
             }
-            if (arregloP[i] >= 7) {
+            if (arregloP[i] >= 7.0) {
                 aprobadoProgramacion = String.format("%s\nEl estudainte %s con promedio de %.2f", aprobadoProgramacion, arreglo[i], arregloP[i]);
             }
-            if (arregloC[i] >= 7) {
+            if (arregloL[i] >= 7.0) {
                 aprobadoLogica = String.format("%s\nEl estudainte %s con promedio de %.2f", aprobadoLogica, arreglo[i], arregloL[i]);
             }
         }

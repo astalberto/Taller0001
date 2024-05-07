@@ -14,7 +14,6 @@ public class JavaApplication38 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String[] arregloGeneral;
         int numEst;
         Metodos obj = new Metodos();
         numEst = obj.numEst();
