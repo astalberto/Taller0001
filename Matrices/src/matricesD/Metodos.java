@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -18,7 +19,7 @@ public class Metodos {
     int[][] myMatrizR;
 
     public Metodos(int n) {
-        myMatriz = new int[n][n];
+        myMatriz = new int[4][n];
         this.entrada = new Scanner(System.in);
         myMatriz2 = new int[n][n];
         myMatrizR = new int[myMatriz.length][myMatriz2[0].length];
@@ -31,8 +32,10 @@ public class Metodos {
         System.out.println("Presentar   A       [3]");
         System.out.println("Presentar   B       [4]");
         System.out.println("Transposicion       [5]");
-        System.out.println("Multiplicacion AyB  [6]");
-        System.out.println("Salir               [7]");
+        System.out.println("Diagonal Sec        [6]");
+        System.out.println("Multiplicacion AyB  [7]");
+        System.out.println("Determinante        [8]");
+        System.out.println("Salir               [0]");
         System.out.println("-----------------------");
         return entrada.nextInt();
     }
@@ -85,16 +88,45 @@ public class Metodos {
     }
 
     public void multMatriz() {
-        int suma=0;
+        int suma;
         for (int i = 0; i < myMatriz.length; i++) {
-            for (int k = 0; k < myMatriz2[i].length; k++) {
-                for (int j = 0; j < myMatriz.length; j++) {
-                   suma+=myMatriz[i][j]*myMatriz2[j][k]; 
+            for (int k = 0; k < myMatriz2[0].length; k++) {
+                suma = 0;
+                for (int j = 0; j < myMatriz2.length; j++) {
+                    suma += myMatriz[i][j] * myMatriz2[j][k];
                 }
-                myMatrizR[i][k]=suma;
-                suma=0; 
+                myMatrizR[i][k] = suma;
             }
         }
         presentarMatriz(myMatrizR);
     }
+
+    public void determinante() {
+        int sumaf = 0, restaf = 0;
+        int suma;
+        int resta;
+        int rta;
+        for (int i = 0; i < myMatriz2.length; i++) {
+            int k = i;
+            int l = myMatriz2.length - 1 - i;
+            suma = 1;
+            resta = 1;
+            for (int j = 0; j < myMatriz2.length; j++) {
+                suma *= myMatriz2[j][k];
+                resta *= myMatriz2[j][l];
+                if (k < myMatriz2.length - 1) {
+                    k++;
+                    l--;
+                } else {
+                    k = 0;
+                    l = myMatriz2.length - 1;
+                }
+            }
+            sumaf += suma;
+            restaf += resta;
+        }
+        rta = sumaf - restaf;
+        System.out.println(rta);
+    }
+
 }

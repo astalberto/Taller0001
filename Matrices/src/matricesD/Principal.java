@@ -28,16 +28,16 @@ public class Principal {
                 case 4:
                     obj.presentarMatriz(obj.myMatriz2);
                     break;
-
                 case 5:
                     obj.transposicionMatrices();
                     break;
-
                 case 6:
                     obj.diagonalSecundariaTransposicion();
                 case 7:
                     obj.multMatriz();
                     break;
+                case 8:
+                    obj.determinante();
                 default:
             }
         } while (opc != 0);
