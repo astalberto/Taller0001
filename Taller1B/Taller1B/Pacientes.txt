@@ -1,0 +1,28 @@
+Paciente 1
+Nombre completo: Erick Jhair Rodas
+Cedula:1900897917
+Fecha de nacimiento: 18/01/2005
+Estatura: 181 cm
+Peso: 74 kg
+Alergias: Polvo
+Paciente 2
+Nombre completo: Hilton Andres Sanchez Saavedra
+Cedula:1106022948
+Fecha de nacimiento: 16/04/2005
+Estatura: 171 cm
+Peso: 65 kg
+Alergias: Ninguna
+Paciente 1
+Nombre completo: Erick Jhair Rodas Ordo�ez
+Cedula:1900897917
+Fecha de nacimiento: 18/01/2005
+Estatura: 181 cm
+Peso: 74 kg
+Alergias: Polvo
+Paciente 2
+Nombre completo: Betty Maria Ordo�ez Betancourth
+Cedula:1900329242
+Fecha de nacimiento: 21/11/1973
+Estatura: 162 cm
+Peso: 60 kg
+Alergias: Ninguna
