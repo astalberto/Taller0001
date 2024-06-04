@@ -94,7 +94,29 @@ public class Metodos {
 
     }
 
-    public void eliminar(int n) {
-        
+    public void eliminar(int num) {
+        if (listaVacia()) {
+            System.out.println("No existe lista");
+        } else {
+            if (num == head.valor) {
+                head = head.sig;
+                if (head == null) {
+                    tail = null;
+                }
+            } else {
+                Nodo actual = head;
+                while ((actual.sig != null) && (num != actual.sig.valor)) {
+                    actual = actual.sig;
+                    if (actual.sig == null) {
+                        System.out.println("Elemento no existe");
+                    } else {
+                        actual.sig = actual.sig.sig;
+                        if (actual.sig == null) {
+                            tail = actual;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
