@@ -19,15 +19,28 @@ public class Enlazada {
         do {
             opc = obj.menu();
             switch (opc) {
-                case 1:
+                case 1 -> {
                     System.out.println("Elemento a insertar");
                     num = obj.entrada.nextInt();
                     obj.insertar(num);
-                    break;
-                case 2:
+                }
+                case 2 ->
                     obj.recorrer();
-                default:
-                    throw new AssertionError();
+                case 3 -> {
+                    System.out.println("Elemento a insertar");
+                    num = obj.entrada.nextInt();
+                    obj.insertarInicio(num);
+                }
+                case 4 -> {
+                    System.out.println("Elemento a insertar");
+                    num = obj.entrada.nextInt();
+                    obj.ordenado(num);
+                }
+                case 5 -> {
+                    System.out.println("Elemento a Eliminar");
+                    num = obj.entrada.nextInt();
+                    obj.eliminar(num);
+                }
             }
         } while (opc != 0);
     }

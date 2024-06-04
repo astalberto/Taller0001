@@ -23,9 +23,12 @@ public class Metodos {
     }
 
     public int menu() {
-        System.out.println("Salir    [0]");
-        System.out.println("Ingresar [1]");
-        System.out.println("Recorrer [2]");
+        System.out.println("Salir     [0]");
+        System.out.println("Ingresar  [1]");
+        System.out.println("Recorrer  [2]");
+        System.out.println("InsertatI [3]");
+        System.out.println("Ordenado  [4]");
+        System.out.println("Eliminar  [5]");
         return entrada.nextInt();
     }
 
@@ -45,11 +48,53 @@ public class Metodos {
     }
 
     public void recorrer() {
-        while (true) {
-            Nodo aux = head;
-            System.out.println(aux);
+        Nodo aux = head;
+        System.out.println("-------------------------");
+        while (aux != null) {
+            System.out.println(aux.valor);
             aux = aux.sig;
+        }
+        System.out.println("-------------------------");
+    }
+
+    public void insertarInicio(int n) {
+        Nodo nuevo = new Nodo(n);
+        if (listaVacia()) {
+            head = nuevo;
+            tail = nuevo;
+        } else {
+            nuevo.sig = head;
+            head = nuevo;
+            recorrer();
         }
     }
 
+    public void ordenado(int n) {
+        Nodo nuevo = new Nodo(n);
+        if (listaVacia()) {
+            head = nuevo;
+            tail = nuevo;
+        } else {
+            if (n < head.valor) {
+                nuevo.sig = head;
+                head = nuevo;
+            } else {
+                Nodo act = head;
+                while ((act.sig != null) && (n > act.sig.valor)) {
+                    act = act.sig;
+                }
+                nuevo.sig = act.sig;
+                act.sig = nuevo;
+                if (nuevo.sig == null) {
+                    tail = nuevo;
+                }
+            }
+            recorrer();
+        }
+
+    }
+
+    public void eliminar(int n) {
+        
+    }
 }
