@@ -78,20 +78,10 @@ public class Metodos {
         }
     }
 
-    public void reporteM() {
+    public void reporte(char x) {
         Nodo actual = head;
         while (actual != null) {
-            if (actual.estudiante.getSexo() == 'f') {
-                System.out.println(actual.estudiante);
-            }
-            actual = actual.sig;
-        }
-    }
-
-    public void reporteV() {
-        Nodo actual = head;
-        while (actual != null) {
-            if (actual.estudiante.getSexo() == 'm') {
+            if (actual.estudiante.getSexo() == x) {
                 System.out.println(actual.estudiante);
             }
             actual = actual.sig;
@@ -123,4 +113,5 @@ public class Metodos {
             }
         }
     }
+
 }

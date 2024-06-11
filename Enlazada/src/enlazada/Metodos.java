@@ -49,11 +49,14 @@ public class Metodos {
 
     public void recorrer() {
         Nodo aux = head;
+        String mensaje = "";
         System.out.println("-------------------------");
         while (aux != null) {
             System.out.println(aux.valor);
+            mensaje = String.format("%s%s", aux.valor, mensaje);
             aux = aux.sig;
         }
+        System.out.println(mensaje);
         System.out.println("-------------------------");
     }
 
@@ -90,6 +93,7 @@ public class Metodos {
                 }
             }
             recorrer();
+            String mensaje = "";
         }
 
     }
